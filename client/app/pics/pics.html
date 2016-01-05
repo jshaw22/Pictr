@@ -1,0 +1,44 @@
+
+<div id='container'>
+<br>
+  <table class="col-md-1 table-bordered table-striped table-hover">
+  <thead>
+    <th>Categories</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td ng-click='myFilter = ""'>All</td>
+    </tr>
+    <tr>
+      <td ng-click='myFilter={category:"architecture"}'>Architecture</td>
+    </tr>
+    <tr>
+      <td ng-click='myFilter={category:"animalsandpets"}'>Animals and Pets</td>
+    </tr>
+    <tr>
+      <td ng-click='myFilter={category:"landscape"}'>Landscape</td>
+    </tr>
+    <tr>
+      <td ng-click='myFilter={category:"funny"}'>Funny</td>
+    </tr>
+    <tr>
+      <td ng-click='myFilter={category:"people"}'>People</td>
+    </tr>
+    <tr>
+      <td ng-click='myFilter={category:"wayne"}'>Pictures of Wayne</td>
+    </tr>
+
+  </tbody>
+  </table>
+<div class='col-md-11'>
+	<div class='col-md-4 borders' ng-repeat = "pic in pics | filter:myFilter">
+    	<a href='{{pic.url}}'><img class='image' src='{{pic.url}}'/></a>
+    	<div class='title'>{{pic.title}}</div>
+    	<div class='description'>{{pic.description}}</div>
+    	<div class='votes'><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> {{pic.votes}}</div>
+    	<div class='votes'>{{pic.category}}</div>
+		<br>
+	</div>
+  </div>
+</div>
+</div>

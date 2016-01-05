@@ -1,0 +1,23 @@
+
+<div class = 'container'>
+	<h2>Submit a Link</h2>
+	<form name = 'submitForm'>
+		<input type='text' placeholder='Picture title' ng-model='title'><br>
+		<p></p>
+		<input type='text' placeholder='Description' ng-model='description' ng-maxlength='32' ><br>
+		<p>{{description.length || 0}}/32</p>
+		<input type='text' placeholder='Picture URL' ng-model='url'><br>
+		<label for='singleSelect'>Please Select a category:</label><br>
+		<select name='singleSelect' id='singleSelect' ng-model='category'>
+			<option value=''>--Please select an option--</option>
+			<option value='architecture'>Architecture</option>
+			<option value='animalsandpets'>Animals and Pets</option>
+			<option value='landscape'>Landscape</option>
+			<option value='funny'>Funny</option>
+			<option value='people'>People</option>
+			<option value='wayne'>Pictures of Wayne</option>
+		</select>
+		<button ng-click='clicked(title, description, url, category)'>Submit</button>
+	</form>
+</div>
+</body>
