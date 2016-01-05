@@ -20,17 +20,18 @@ module.exports = {
 	},
 
 	newPic: function (req, res, next){
-		var title = req.title;
-		var category = req.category;
-		var url = req.url;
-		var description = req.description;
 
 		return createPic({
-			title: title,
-			category: category,
-			url: url,
-			description: description,
+			title: req.body.title,
+			category: req.body.category,
+			url: req.body.url,
+			description: req.body.description,
 			votes: 0
+		})
+		.then(function (createdPic){
+			if(createdPic){
+				res.json(createdPic)
+			}
 		})
 	}
 }

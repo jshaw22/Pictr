@@ -8,9 +8,9 @@ module.exports = function (app, express) {
 	app.get('/api/pics/', picsController.allPics);
 	//app.post('api/pics/', picsController.newPic);
 
-	app.get('/', function (req, res){
-		res.send("Now serving the home page")
-	});
+	// app.get('/', function (req, res){
+	// 	res.send("/client/index.html");
+	// });
 
 	app.post('/api/pics', picsController.newPic);
 
