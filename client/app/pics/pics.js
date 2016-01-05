@@ -12,6 +12,19 @@ angular.module('pics', [])
   // initializeAll();
   $scope.categories = ['All', 'Architecture', 'Animals & Pets', 'Landscape', 'Funny', 'People', 'Pictures of Wayne']
 
+  /* LIKE controller logic*/
+
+  $scope.heart = 'glyphicon glyphicon-heart-empty'
+
+  $scope.toggleLike = function () {
+    if($scope.heart === 'glyphicon glyphicon-heart-empty'){
+      $scope.heart = 'glyphicon glyphicon-heart';
+    } else {
+      $scope.heart = 'glyphicon glyphicon-heart-empty'
+    }
+  }
+
+
   $scope.getAll = function(){
     Pics.getAll().then(function(res){
       $scope.pics = res;
@@ -20,3 +33,4 @@ angular.module('pics', [])
   }
 $scope.getAll();
 })
+

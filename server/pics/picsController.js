@@ -5,6 +5,7 @@ Q = require('q');
 
 var createPic = Q.nbind(Pic.create, Pic); 
 var findAllPics = Q.nbind(Pic.find, Pic);
+var findPic = Q.nbind(Pic.findOne, Pic);
 
 module.exports = {
 
@@ -33,5 +34,20 @@ module.exports = {
 				res.json(createdPic)
 			}
 		})
+	}
+
+	upvote: function(req, res, next){
+		findPic({url: req.body.url})
+		.then(function (pic) {
+			pic.votes++;
+			pic.save(function (err, saved) {
+				if(err){
+					next(err);
+				} else {
+					console.log("Saved successfully " + save)
+				}
+			})
+		})
+
 	}
 }

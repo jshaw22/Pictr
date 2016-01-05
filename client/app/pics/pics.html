@@ -5,7 +5,7 @@
   <thead>
     <th>Categories</th>
   </thead>
-  <tbody>
+  <tbody class='tableBod'>
     <tr>
       <td ng-click='myFilter = ""'>All</td>
     </tr>
@@ -35,8 +35,8 @@
     	<a href='{{pic.url}}'><img class='image' src='{{pic.url}}'/></a>
     	<div class='title'>{{pic.title}}</div>
     	<div class='description'>{{pic.description}}</div>
-    	<div class='votes'><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> {{pic.votes}}</div>
-    	<div class='votes'>{{pic.category}}</div>
+    	<div class='votes'><span ng-class='heart' aria-hidden="true" ng-click='toggleLike()'></span> {{pic.votes}}</div>
+    	<div class='category'>{{pic.category}}</div>
 		<br>
 	</div>
   </div>
