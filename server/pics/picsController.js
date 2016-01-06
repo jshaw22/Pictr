@@ -34,7 +34,7 @@ module.exports = {
 				res.json(createdPic)
 			}
 		})
-	}
+	},
 
 	upvote: function(req, res, next){
 		findPic({url: req.body.url})

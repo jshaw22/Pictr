@@ -31,11 +31,11 @@
   </tbody>
   </table>
 <div class='col-md-11'>
-	<div class='col-md-4 borders' ng-repeat = "pic in pics | filter:myFilter">
+	<div class='col-md-4 borders' ng-repeat = "pic in pics| filter:myFilter">
     	<a href='{{pic.url}}'><img class='image' src='{{pic.url}}'/></a>
     	<div class='title'>{{pic.title}}</div>
     	<div class='description'>{{pic.description}}</div>
-    	<div class='votes'><span ng-class='heart' aria-hidden="true" ng-click='toggleLike()'></span> {{pic.votes}}</div>
+    	<div class='votes'><span ng-class='heart' aria-hidden="true" ng-click='toggleLike(pic)'></span> {{pic.votes}}</div>
     	<div class='category'>{{pic.category}}</div>
 		<br>
 	</div>

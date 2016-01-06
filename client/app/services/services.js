@@ -21,6 +21,8 @@ angular.module('services', [])
       });
     };
 
+    var upVote = function(pic){}
+
     return {
       getAll: getAll,
       addOne: addOne

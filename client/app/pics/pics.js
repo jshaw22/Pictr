@@ -14,23 +14,38 @@ angular.module('pics', [])
 
   /* LIKE controller logic*/
 
-  $scope.heart = 'glyphicon glyphicon-heart-empty'
+  $scope.heart = 'glyphicon glyphicon-heart-empty';
 
-  $scope.toggleLike = function () {
+  $scope.toggleLike = function (pic) {
+
     if($scope.heart === 'glyphicon glyphicon-heart-empty'){
       $scope.heart = 'glyphicon glyphicon-heart';
+      pic.votes++;
     } else {
       $scope.heart = 'glyphicon glyphicon-heart-empty'
+      pic.votes--;
     }
+    pic.liked = true;
   }
+
 
 
   $scope.getAll = function(){
     Pics.getAll().then(function(res){
       $scope.pics = res;
-      console.log(res);
+    })
+    .then(function(){
+      for(var i =0; i<$scope.pics.length;i++){
+        $scope.pics[i].liked = false;
+      }
+      console.log($scope.pics)
     })
   }
+
 $scope.getAll();
+
+
 })
+
+
 

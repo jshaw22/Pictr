@@ -1,10 +1,13 @@
 
 <div class = 'container'>
-	<h2>Submit a Link</h2>
+	<h2>Upload your Pic</h2>
 	<form name = 'submitForm'>
+		<div class='title'>
 		<input type='text' placeholder='Picture title' ng-model='title'><br>
+		
 		<p></p>
-		<input type='text' placeholder='Description' ng-model='description' ng-maxlength='32' ><br>
+		<textarea type='text' placeholder='Description' ng-model='description' ng-maxlength='32' ></textarea><br>
+		</div>
 		<p>{{description.length || 0}}/32</p>
 		<input type='text' placeholder='Picture URL' ng-model='url'><br>
 		<label for='singleSelect'>Please Select a category:</label><br>
